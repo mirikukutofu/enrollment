@@ -1,0 +1,18 @@
+Array
+(
+    [course_track] => 2
+    [year_level] => 5
+    [semester] => 1
+    [subjects] => Array
+        (
+            [0] => Array
+                (
+                    [subject_code] => HCI
+                    [title] => HCI 1
+                    [lecture] => 2
+                    [lab] => 3
+                )
+
+        )
+
+)

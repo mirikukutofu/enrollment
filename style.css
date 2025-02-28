@@ -1,0 +1,594 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.sidenav  {
+  width: 250px;
+  height: 100vh;
+  background:#50C878;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.sidenav-header {
+  padding: 20px;
+  background: #34495e;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.sidenav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.sidenav-menu li {
+  margin: 10px 0;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-item .icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.menu-item:hover {
+  background: #16a085;
+  transform: translateX(5px);
+}
+
+.submenu {
+  position: relative;
+}
+
+.submenu-title {
+  display: block;
+  padding: 15px 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submenu-title:hover {
+  background: #16a085;
+}
+
+.submenu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none; 
+  background: #34495e;
+  border-left: 2px solid #16a085;
+}
+
+.submenu-list li {
+  margin: 0;
+}
+
+.submenu-list .menu-item {
+  padding: 10px 30px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.submenu-list .menu-item:hover {
+  background: #1abc9c;
+}
+
+/* Show the submenu when submenu is active */
+.submenu.active .submenu-list {
+  display: block;
+}
+
+
+.content {
+  margin-left: 260px;
+  padding: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sidenav {
+    width: 200px;
+  }
+  .menu-item {
+    padding: 10px 15px;
+  }
+  .content {
+    margin-left: 210px;
+  }
+}
+
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 80px;
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color:#50C878;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.content {
+  padding: 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls label {
+  font-weight: bold;
+}
+
+.controls select,
+.controls .search-box,
+.controls .new-course-btn,
+.controls .new-subject-btn,
+.controls .new-schoolyear-btn,
+.controls .new-semester-btn,
+.controls .new-yearlevel-btn,
+.controls .schoolyear-btn,
+.controls .new-section-btn {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.new-scholarship-btn,
+.schoolyear-btn,
+.new-yearlevel-btn,
+.new-schoolyear-btn,
+.new-section-btn,
+.new-course-btn,
+.new-semester-btn,
+.new-subject-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Adds space between the icon and the text */
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.new-scholarship-btn:hover,
+.schoolyear-btn:hover,
+.new-yearlevel-btn:hover,
+.new-schoolyear-btn:hover,
+.new-section-btn:hover,
+.new-subject-btn:hover,
+.new-semester-btn:hover,
+.new-course-btn:hover {
+  background-color: #13876b;
+}
+
+.fees-table,
+.scholarship-table,
+.students-table,
+.insurance-table,
+.requirement-table,
+.schoolyear-table,
+.yearlevel-table,
+.semester-table,
+.schoolyear-table,
+.section-table,
+.course-table,
+.subject-table,
+.year-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fees-table th,
+.fees-table td,
+.scholarship-table th,
+.scholarship-table td,
+.students-table th,
+.students-table td,
+.insurance-table th,
+.insurance-table td,
+.requirement-table th,
+.requirement-table td,
+.schoolyear-table th,
+.schoolyear-table td,
+.yearlevel-table th,
+.yearlevel-table td,
+.semester-table th,
+.semester-table td,
+.schoolyear-table th,
+.schoolyear-table td,
+.section-table th,
+.section-table td,
+.course-table th,
+.course-table td,
+.subject-table th,
+.subject-table td,
+.year-table th,
+.year-table td  {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+.fees-table th,
+.scholarship-table th,
+.students-table th, 
+.insurance-table th, 
+.requirement-table th, 
+.schoolyear-table th, 
+.yearlevel-table th, 
+.semester-table th, 
+.section-table th, 
+.course-table th, 
+.subject-table th,
+.year-table th {
+  background: #16a085;
+      color: white;
+      text-align: center;
+}
+
+
+.action-btn, .edit-btn, .view-btn, .save-btn, .delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.action-btn.edit, .edit-btn, .save-btn {
+  background-color: #f39c12;
+  color: white;
+}
+.view-btn{
+  background-color: blue;
+  color: white;
+}
+
+.action-btn.delete, .delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-content {
+  background: #f9f9f9; 
+  margin: 5% auto;
+  padding: 30px;
+  width: 35%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  animation: slide-down 0.3s ease-out; 
+  position: relative;
+  text-align: left; 
+}
+
+.close-modal {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #ff4d4d;
+}
+
+.modal-content h2 {
+  margin: 0 0 20px;
+  color: #333;
+  font-size: 24px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  border-color: #3b82f6; 
+  outline: none;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.5); /* Soft glow */
+}
+
+.modal-content .submit-btn {
+  background: #3b82f6; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content .submit-btn:hover {
+  background: #2563eb; 
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4); 
+}
+
+.modal-content .submit-btn:active {
+  background: #1e40af; 
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+h1 {
+  color: green;
+}
+.filter-container {
+      position: relative;
+      display: inline-block;
+  }
+
+  .filter-icon {
+      cursor: pointer;
+      font-size: 10px;
+      color: #0078D7;
+      padding: 10px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+  }
+
+  .filter-icon:hover {
+      background-color: #0078D7;
+      color: #ffffff;
+  }
+
+  .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 0;
+      z-index: 10;
+      list-style-type: none;
+      margin: 10px 0 0;
+      width: 200px;
+  }
+
+  .dropdown-menu > li {
+      position: relative;
+      padding: 12px 16px;
+      font-size: 16px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dropdown-menu > li:hover {
+      background-color: #0078D7;
+      color: #ffffff;
+  }
+
+  .dropdown-menu li:last-child {
+      border-bottom: none;
+  }
+
+  .dropdown-menu ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 200px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 0;
+      list-style-type: none;
+      margin: 0;
+      width: 200px;
+  }
+
+  .dropdown-menu li:hover > ul {
+      display: block;
+  }
+
+  .dropdown-menu ul li {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dropdown-menu ul li:hover {
+      background-color: #0078D7;
+      color: #ffffff;
+  }
+
+  .dropdown-menu ul li:last-child {
+      border-bottom: none;
+  }
+
+  .filter-container:hover .dropdown-menu {
+      display: block;
+  }
+
+  .filter-modal {
+position: absolute;
+top: 50px;
+left: 0;
+right: 0;
+margin: 0 auto;
+width: 350px;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+padding: 20px;
+display: none;
+z-index: 1000;
+animation: fadeIn 0.3s ease-out;
+}
+
+.filter-modal h3 {
+margin: 0 0 15px 0;
+font-size: 18px;
+color: #333;
+text-align: center;
+}
+
+.filter-modal label {
+font-size: 14px;
+margin-bottom: 5px;
+color: #555;
+display: block;
+}
+
+.filter-modal select {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-size: 14px;
+box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.apply-btn {
+width: 100%;
+background-color: #007bff;
+color: white;
+border: none;
+padding: 10px 15px;
+font-size: 16px;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-align: center;
+}
+
+.apply-btn:hover {
+background-color: #0056b3;
+}
+
+
+@keyframes fadeIn {
+from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+.filter-modal {
+display: none;
+/* Add styles for the modal */
+}
+
+.filter-modal.show {
+display: block;
+}
